@@ -18,8 +18,14 @@ model = transformers.DistilBertForSequenceClassification.from_pretrained(
 st.write("Enter a text below to analyze its sentiment:")
 user_input = st.text_area("Text to analyze", placeholder="Type something...")
 if st.button('Analyze Sentiment'):
-    encoded = tokenizer(user_input, return_tensors="pt")
-    output = model(**encoded)
-    predicted_class_id = output['logits'].argmax().item()
-    prediction = model.config.id2label[predicted_class_id]
-    st.write(prediction)
+    if len(user_input) > 0:
+        encoded = tokenizer(user_input, return_tensors="pt")
+        output = model(**encoded)
+        predicted_class_id = output['logits'].argmax().item()
+        prediction = model.config.id2label[predicted_class_id]
+        st.write(prediction)
+    else:
+        st.warning("Please enter some text to analyze.")
+
+# Footer
+st.markdown("Created with ❤️ using Streamlit and Hugging Face Transformers.")
