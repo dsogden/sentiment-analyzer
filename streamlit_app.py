@@ -16,7 +16,7 @@ model = transformers.DistilBertForSequenceClassification.from_pretrained(
 )
 
 st.write("Enter a text below to analyze its sentiment:")
-user_input = st.text_area("Text to analyze", placeholder="Type something...")
+user_input = st.text_area('Text to analyze', placeholder="Type something...")
 if st.button('Analyze Sentiment'):
     if len(user_input) > 0:
         encoded = tokenizer(user_input, return_tensors="pt")
