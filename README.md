@@ -2,7 +2,7 @@
 
 A simple app that uses BERT to predict the sentiment of text.
 
-[![Open in Streamlit](https://sentiment-analyzer-00.streamlit.app/)
+[![Open in Streamlit](https://sentiment-analyzer-00.streamlit.app/)]
 
 ### How to run it on your own machine
 
